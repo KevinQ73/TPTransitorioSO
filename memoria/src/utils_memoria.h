@@ -1,0 +1,18 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include <commons/config.h>
+#include "../../shared/src/utils/comunicacion.h"
+#include "../../shared/src/utils/server.h"
+
+typedef struct{
+    int PUERTO_ESCUCHA;
+    char* IP_FILESYSTEM;
+    int PUERTO_FILESYSTEM;
+    u_int32_t TAM_MEMORIA;
+    u_int32_t TAM_PAGINA;
+    char* PATH_INSTRUCCIONES;
+    int RETARDO_RESPUESTA;
+    char* ALGORITMO_REEMPLAZO;
+} t_memoria_config;
