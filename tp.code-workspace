@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "cpu"
+		},
+		{
+			"path": "filesystem"
+		},
+		{
+			"path": "kernel"
+		},
+		{
+			"path": "memoria"
+		},
+		{
+			"path": "shared"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"comunicacion.h": "c",
+			"utils_cpu.h": "c",
+			"stdint.h": "c",
+			"config.h": "c",
+			"stdlib.h": "c"
+		}
+	}
+}
