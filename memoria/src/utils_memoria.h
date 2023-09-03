@@ -7,6 +7,10 @@
 #include "../../shared/src/utils/server.h"
 
 typedef struct{
+    int SOCKET_MEMORIA;
+    int SOCKET_CPU;
+    int SOCKET_KERNEL;
+    int SOCKET_FILESYSTEM;
     int PUERTO_ESCUCHA;
     char* IP_FILESYSTEM;
     int PUERTO_FILESYSTEM;
@@ -22,3 +26,6 @@ extern t_config* nuevo_config;
 extern t_log* memoria_logger;
 
 void iniciar_config_memoria();
+void realizar_handshakes_con_memoria();
+void finalizar_memoria();
+void conectar_filesystem();

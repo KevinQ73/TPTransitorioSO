@@ -16,5 +16,7 @@ typedef struct{
 extern t_cpu_config cpu_config;
 extern t_config* nuevo_config;
 extern t_log* cpu_logger;
+int conexion_memoria;
 
 void iniciar_config_cpu();
+void conectar_memoria();

@@ -14,17 +14,17 @@ int main(void) {
 
     /*INICIAR CLIENTE A FILESYSTEM*/
 
-    conectar_memoria(memoria_config.PUERTO_FILESYSTEM);
+    conectar_filesystem(memoria_config.PUERTO_FILESYSTEM);
     log_info(memoria_logger, "Se conectó a FILESYSTEM");
 
-    /*INICIAR SERVIDOR A CPU*/
+    /*INICIAR SERVIDOR A CPU - KERNEL - FILESYSTEM*/
 
-    cpu_socket = servidor_kernel(memoria_config.PUERTO_ESCUCHA);
-    log_info(memoria_logger, "Se inició el servidor a Kernel");
+    realizar_handshakes_con_memoria();
+    log_info(memoria_logger, "Se inició el servidor a CPU, Kernel y Filesystem");
 
     /*LIBERAR MEMORIA*/
-	log_debug(memoria_logger, "TERMINANDO CPU");
+	log_debug(memoria_logger, "TERMINANDO MEMORIA");
+    finalizar_memoria();
 	config_destroy(nuevo_config);
-	log_destroy(memoria_logger);
     return EXIT_SUCCESS;
 }

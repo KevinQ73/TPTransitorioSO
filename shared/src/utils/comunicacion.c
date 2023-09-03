@@ -51,3 +51,42 @@ int realizar_handshakes(char* ip, char* puerto, t_log* logger){
 		return socket_cliente;
 	}
 }
+
+int handshake_memoria(char* ip, char* puerto, int codigo_handshake, t_log* logger){
+	struct addrinfo hints;
+	struct addrinfo *server_info;
+	int socket_cliente = 0;
+
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
+
+	getaddrinfo(ip, puerto, &hints, &server_info);
+
+	socket_cliente = socket(server_info->ai_family,
+								server_info->ai_socktype,
+								server_info->ai_protocol);
+
+	uint32_t result;
+
+	connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen);
+
+	send(socket_cliente, &codigo_handshake, sizeof(int), NULL);
+	recv(socket_cliente, &result, sizeof(uint32_t), MSG_WAITALL);
+
+	int i = 0;
+	while (result != 0 && i < 3){
+		send(socket_cliente, &codigo_handshake, sizeof(int), NULL);
+		recv(socket_cliente, &result, sizeof(uint32_t), MSG_WAITALL);
+		i++;
+	}
+
+	if(result == 0){
+		log_info(logger, "Handshake con MEMORIA satisfactorio");
+	}
+
+	freeaddrinfo(server_info);
+
+	return socket_cliente;
+}

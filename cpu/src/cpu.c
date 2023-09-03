@@ -14,13 +14,13 @@ int main(void) {
 
     /*INICIAR CLIENTE A MEMORIA*/
 
-    conectar_memoria(cpu_config.PUERTO_MEMORIA);
+    conectar_memoria(cpu_config);
     log_info(cpu_logger, "Se conectó a MEMORIA");
 
     /*INICIAR SERVIDOR A KERNEL*/
 
     kernel_socket = servidor_kernel(cpu_config.PUERTO_ESCUCHA_DISPATCH);
-    log_info(cpu_logger, "Se inició el servidor a Kernel");
+    log_info(cpu_logger, "Se inició el servidor a KERNEL");
 
     /*LIBERAR MEMORIA*/
 	log_debug(cpu_logger, "TERMINANDO CPU");
