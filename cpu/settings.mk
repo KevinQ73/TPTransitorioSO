@@ -3,7 +3,7 @@ LIBS=shared commons pthread
 
 # Custom libraries' paths
 SHARED_LIBPATHS=
-STATIC_LIBPATHS=
+STATIC_LIBPATHS=../shared
 
 # Compiler flags
 CDEBUG=-g -Wall -DDEBUG -fcommon -fdiagnostics-color=always

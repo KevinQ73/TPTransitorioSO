@@ -8,4 +8,4 @@
 t_config* iniciar_config(char*);
 void eliminar_config(t_config*);
 
-#endif /* CONFIGURATION_H_ */
+#endif /* CONFIGURACION_H_ */

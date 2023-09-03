@@ -5,7 +5,8 @@
 #include <commons/config.h>
 #include "../../shared/src/utils/comunicacion.h"
 #include "../../shared/src/utils/server.h"
-
+#include "../../shared/src/utils/logger.h"
+#include "../../shared/src/utils/configuracion.h"
 typedef struct{
     int SOCKET_MEMORIA;
     int SOCKET_CPU;
