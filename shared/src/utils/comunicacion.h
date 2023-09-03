@@ -18,5 +18,6 @@ typedef enum {
 
 int realizar_handshakes(char* ip, char* puerto, t_log* logger);
 int crear_conexion(char* ip, char* puerto);
+int handshake_memoria(char* ip, char* puerto, int codigo_handshake, t_log* logger);
 
 #endif /* COMUNICACION_H_ */
