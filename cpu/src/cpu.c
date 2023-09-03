@@ -27,5 +27,4 @@ int main(void) {
 	config_destroy(nuevo_config);
 	log_destroy(cpu_logger);
     return EXIT_SUCCESS;
-
 }
