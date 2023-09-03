@@ -16,3 +16,9 @@ typedef struct{
     int RETARDO_RESPUESTA;
     char* ALGORITMO_REEMPLAZO;
 } t_memoria_config;
+
+extern t_memoria_config memoria_config;
+extern t_config* nuevo_config;
+extern t_log* memoria_logger;
+
+void iniciar_config_memoria();

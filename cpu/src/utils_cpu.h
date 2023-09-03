@@ -13,4 +13,8 @@ typedef struct{
     int PUERTO_ESCUCHA_INTERRUPT;
 } t_cpu_config;
 
-void cargar_config();
+extern t_cpu_config cpu_config;
+extern t_config* nuevo_config;
+extern t_log* cpu_logger;
+
+void iniciar_config_cpu();

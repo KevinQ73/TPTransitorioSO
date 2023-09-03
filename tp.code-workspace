@@ -22,7 +22,8 @@
 			"utils_cpu.h": "c",
 			"stdint.h": "c",
 			"config.h": "c",
-			"stdlib.h": "c"
+			"stdlib.h": "c",
+			"server.h": "c"
 		}
 	}
 }
