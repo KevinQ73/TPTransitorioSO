@@ -4,18 +4,18 @@ int main(void) {
     
     /* INICIAR LOGGER*/
 
-    cpu_logger = iniciar_logger("./files/memoria.log", "MEMORIA_LOGGER", 1, LOG_LEVEL_DEBUG);
-    log_info(cpu_logger, "Se inició el logger de la MEMORIA");
+    cpu_logger = iniciar_logger("./files/cpu.log", "CPU_LOGGER", 1, LOG_LEVEL_DEBUG);
+    log_info(cpu_logger, "Se inició el logger de la CPU");
 
     /* INICIAR CONFIG*/
     
-    iniciar_config_memoria();
-    log_info(cpu_logger, "Se cargó el config de la MEMORIA");
+    iniciar_config_cpu();
+    log_info(cpu_logger, "Se cargó el config de la CPU");
 
     /*INICIAR CLIENTE A MEMORIA*/
 
     conectar_memoria(cpu_config.PUERTO_MEMORIA);
-    log_info(cpu_logger, "Se conectó a FILESYSTEM");
+    log_info(cpu_logger, "Se conectó a MEMORIA");
 
     /*INICIAR SERVIDOR A KERNEL*/
 
